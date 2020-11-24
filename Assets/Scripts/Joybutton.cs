@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class Joybutton : MonoBehaviour, IPointerDownHandler,IPointerUpHandler
 {
-    [HideInInspector]
-    protected bool pressed;
+  
+    public bool pressed;
 
     public void OnPointerDown(PointerEventData eventData)
     {
