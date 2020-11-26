@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     protected bool jump;
     public Transform shootingPosition;
     public GameObject bulletPrefab;
+    public static int score = 0;
     private void Start()
     {
         joystick = FindObjectOfType<FixedJoystick>();

@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
     public Rigidbody2D rb;
+   // public Animation anima;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +14,15 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
-        Destroy(this.gameObject);
+        if (collision.CompareTag("Enemy"))
+        {
+            
+            Debug.Log(collision.name);
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+            PlayerMovement.score++;
+            Debug.Log(PlayerMovement.score.ToString());
+        }
     }
 
 }
