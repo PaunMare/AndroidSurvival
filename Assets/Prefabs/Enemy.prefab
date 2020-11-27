@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7099551115969740051}
   - component: {fileID: 7099551115969740048}
   - component: {fileID: 7099551115969740049}
+  - component: {fileID: -4097277144991128799}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -115,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  healthPoints: 20
+  animationBullet: {fileID: -4097277144991128799}
 --- !u!50 &7099551115969740048
 Rigidbody2D:
   serializedVersion: 4
@@ -158,3 +161,19 @@ NavMeshAgent:
   m_BaseOffset: 2.76
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!111 &-4097277144991128799
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099551115969740047}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 46d9b92f79b9bf14ba2729c1e17bf16d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 46d9b92f79b9bf14ba2729c1e17bf16d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

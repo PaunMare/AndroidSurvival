@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.Audio;
 public class PlayerMovement : MonoBehaviour
 {
     protected FixedJoystick joystick;
@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform shootingPosition;
     public GameObject bulletPrefab;
     public static int score = 0;
+    public AudioSource audioSource;
     private void Start()
     {
         joystick = FindObjectOfType<FixedJoystick>();
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         void Shoot()
         {
             Instantiate(bulletPrefab, shootingPosition.position, shootingPosition.rotation);
+            audioSource.Play();
         }
     }
 }

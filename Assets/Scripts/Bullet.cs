@@ -18,11 +18,14 @@ public class Bullet : MonoBehaviour
         {
             
             Debug.Log(collision.name);
-            Destroy(collision.gameObject);
             Destroy(this.gameObject);
             PlayerMovement.score++;
             Debug.Log(PlayerMovement.score.ToString());
         }
+        
     }
-
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
