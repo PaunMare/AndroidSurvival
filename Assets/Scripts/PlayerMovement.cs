@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
+using UnityEngine.Animations;
 public class PlayerMovement : MonoBehaviour
 {
     protected FixedJoystick joystick;
@@ -14,13 +15,16 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bulletPrefab;
     public static int score = 0;
     public AudioSource audioSource;
+
     private void Start()
     {
         joystick = FindObjectOfType<FixedJoystick>();
         joybutton = FindObjectOfType<Joybutton>();
+       
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        
         rb.velocity = new Vector2(joystick.Horizontal * moveSpeed * Time.fixedDeltaTime, joystick.Vertical * moveSpeed * Time.fixedDeltaTime);
         Vector3 moveVector = (Vector3.up *joystick.Horizontal + Vector3.left * joystick.Vertical);
         if(!jump && joybutton.pressed)
@@ -41,5 +45,7 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(bulletPrefab, shootingPosition.position, shootingPosition.rotation);
             audioSource.Play();
         }
+        
+
     }
 }

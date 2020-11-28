@@ -101,7 +101,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.99, y: 5.12}
+  m_Size: {x: 2, y: 5.2}
   m_Direction: 0
 --- !u!114 &7099551115969740051
 MonoBehaviour:
@@ -148,7 +148,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7099551115969740047}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.45
+  m_Radius: 0.98
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
@@ -157,8 +157,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 5.6
-  m_BaseOffset: 2.76
+  m_Height: 5.16
+  m_BaseOffset: 2.61
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!111 &-4097277144991128799
