@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 1217ea9c6f37eae4ba8961554917f648
   - enabled: 1
-    path: Assets/Scenes/Options.unity
-    guid: dd853dc4d06f68b4daba6de14ef31beb
-  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: b414328dd0dcb0d4ba6f5d60ce6dba88
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
-    guid: de9260daf59a3a94db71efb4e2f856d6
+    path: Assets/Scenes/level.unity
+    guid: cdb07ab3ee0908249be08ec2ede6fa09
+  - enabled: 1
+    path: Assets/Scenes/PlayerInput.unity
+    guid: 22da6f02aba2f4d498b4cba9f1fb8d0e
   m_configObjects: {}

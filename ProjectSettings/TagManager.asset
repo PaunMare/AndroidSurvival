@@ -8,6 +8,8 @@ TagManager:
   - Outside
   - Bullet
   - SpawnablePlaces
+  - Gold
+  - EnemiesKilled
   layers:
   - Default
   - TransparentFX

@@ -4,18 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ChooseItem : MonoBehaviour
 {
+
     public GameObject selectedItem;
-    public List<Button> spawnablePlaces;
+    public GameObject[] places;
+    public Text currentGold;
+    public int turretPrice;
+    int gold;
+    int newGold;
     public void Buy()
     {
-        foreach(Button b in spawnablePlaces)
+        gold = int.Parse(currentGold.text);
+        if (gold >= turretPrice)
         {
-            b.enabled = true;
-        }
-        GameObject[]gameObjects = GameObject.FindGameObjectsWithTag("SpawnablePlaces");
-        foreach(GameObject game in gameObjects)
-        {
-            game.GetComponent<SpawnItem>().SetItem(selectedItem);
+            newGold = int.Parse(currentGold.text);
+            newGold -= turretPrice;
+            currentGold.text = newGold.ToString();
+            foreach (GameObject g in places)
+            {
+                if (g.GetComponent<SpawnItem>().free)
+                {
+                    g.SetActive(true);
+                    g.GetComponent<SpawnItem>().SetItem(selectedItem);
+                }
+            }
         }
     }
+    
 }

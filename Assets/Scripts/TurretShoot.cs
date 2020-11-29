@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class TurretShoot : MonoBehaviour
 {
     public Transform target;
     public float range = 15f;
     public float fireCooldown = 1f;
     private float fireCountdown = 0f;
-    //public Transform firePoint;
+    public AudioSource sound;
     public Transform bullet;
     private void Start()
     {
@@ -62,5 +62,6 @@ public class TurretShoot : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet, transform.position, transform.rotation);
+        sound.Play();
     }
 }

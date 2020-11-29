@@ -1,20 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SpawnItem : MonoBehaviour
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+public class SpawnItem : MonoBehaviour, IPointerDownHandler
 {
     public static GameObject selectedObject;
-
+    GameObject turret;
+    GameObject[] objects;
+    public List<int> takenPlaces;
+    public bool free = true;
     public void Spawn()
     {
-        //Vector3 v3 = transform.position;
-        //v3.x += 5f;
-        Instantiate(selectedObject, transform.position, transform.rotation);
+        objects = GameObject.FindGameObjectsWithTag("SpawnablePlaces");
+        turret =   Instantiate(selectedObject, transform.parent.position.normalized, transform.parent.rotation.normalized);
+        free = false;
+        turret.transform.position = this.transform.position;
+
+        turret.transform.position = new Vector3(turret.transform.position.x, turret.transform.position.y, 0f);
+        foreach(GameObject go in objects)
+        {
+            go.gameObject.SetActive(false);
+        }
+        Invoke("DestroyTurret", 30f);
     }
+    
 
     public void SetItem(GameObject go)
     {
         selectedObject = go;
     }
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Spawn();
+    }
+   public void DestroyTurret()
+    {
+        Destroy(turret.gameObject);
+        free = true;
+    }
 }
+

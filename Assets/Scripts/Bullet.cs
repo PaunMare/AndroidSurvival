@@ -11,20 +11,25 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
+        Invoke("DestroyAfter", 0.3f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
             
-            Debug.Log(collision.name);
+            //Debug.Log(collision.name);
             Destroy(this.gameObject);
             PlayerMovement.score++;
-            Debug.Log(PlayerMovement.score.ToString());
+            //Debug.Log(PlayerMovement.score.ToString());
         }
         
     }
     void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+    void DestroyAfter()
     {
         Destroy(gameObject);
     }
