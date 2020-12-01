@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
         text.text = "Name: " + nickname + "\nscore: " + score.ToString();
         bestNick = PlayerPrefs.GetString("bestNick");
         bestScore = PlayerPrefs.GetInt("bestScore");
-        bestText.text = "Name: " + nickname + "\nscore: " + score.ToString();
+        bestText.text = "Name: " + bestNick + "\nscore: " + bestScore.ToString();
     }
     public void StartTheGame()
     {

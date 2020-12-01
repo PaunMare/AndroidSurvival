@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
         joybutton = FindObjectOfType<Joybutton>();
         gameOver.enabled = false;
     }
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -58,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SetLocalScale(float sizeNormalized)
     {
-        if(currentHealth >= 1)
+        if(currentHealth >= 0)
         bar.localScale = new Vector3(sizeNormalized, 1f);
     }
     private void FixedUpdate()

@@ -54,7 +54,7 @@ public class EnemyFollow : MonoBehaviour
             healthPoints += 2;
             //damageTaken -= 1;
             moveSpeed += 0.1f;
-            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x + 0.015f, gameObject.transform.localScale.y + 0.015f, gameObject.transform.localScale.z);
+            //gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x + 0.015f, gameObject.transform.localScale.y + 0.015f, gameObject.transform.localScale.z);
         }
     }
 }

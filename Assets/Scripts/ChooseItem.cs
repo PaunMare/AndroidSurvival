@@ -16,6 +16,7 @@ public class ChooseItem : MonoBehaviour
         gold = int.Parse(currentGold.text);
         if (gold >= turretPrice)
         {
+            Time.timeScale = 0f;
             newGold = int.Parse(currentGold.text);
             newGold -= turretPrice;
             currentGold.text = newGold.ToString();

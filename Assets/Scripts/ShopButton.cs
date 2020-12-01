@@ -25,8 +25,12 @@ public class ShopButton : MonoBehaviour
         if (turned)
         {
             shop.SetActive(true);
+            Time.timeScale = 0f;
         }
         else
+        {
             shop.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 }

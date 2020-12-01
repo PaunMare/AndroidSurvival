@@ -16,7 +16,7 @@ public class SpawnItem : MonoBehaviour, IPointerDownHandler
         turret =   Instantiate(selectedObject, transform.parent.position.normalized, transform.parent.rotation.normalized);
         free = false;
         turret.transform.position = this.transform.position;
-
+        Time.timeScale = 1f;
         turret.transform.position = new Vector3(turret.transform.position.x, turret.transform.position.y, 0f);
         foreach(GameObject go in objects)
         {
