@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     protected Joybutton joybutton;
     public Rigidbody2D rb;
     public float moveSpeed;
-    protected bool jump;
+    protected bool shoot;
     public Transform shootingPosition;
     public GameObject bulletPrefab;
     public static int score = 0;
@@ -20,15 +20,20 @@ public class PlayerMovement : MonoBehaviour
     public Text Enemy, timer;
     int currentHealth;
     public int maxHp = 5;
-    public Image gameOver;
+    public Image gameOver,victory;
     public Transform bar;
-    
+    GameObject[] enemies;
+    private void Awake()
+    {
+        Screen.orientation = ScreenOrientation.Landscape;
+    }
     private void Start()
     {
         currentHealth = maxHp;
         joystick = FindObjectOfType<FixedJoystick>();
         joybutton = FindObjectOfType<Joybutton>();
         gameOver.enabled = false;
+        victory.enabled = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -50,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
             PlayerPrefs.SetInt("score", score);
             Invoke("LoadScene", 2f);
         }
+        InvokeRepeating("CheckForVictory", 210f, 10f);
     }
     public void LoadScene()
     {
@@ -65,14 +71,14 @@ public class PlayerMovement : MonoBehaviour
         
         rb.velocity = new Vector2(joystick.Horizontal * moveSpeed * Time.fixedDeltaTime, joystick.Vertical * moveSpeed * Time.fixedDeltaTime);
         Vector3 moveVector = (Vector3.up *joystick.Horizontal + Vector3.left * joystick.Vertical);
-        if(!jump && joybutton.pressed)
+        if(!shoot && joybutton.pressed)
         {
-            jump = true;
+            shoot = true;
             Shoot();
         }
-        if(jump && !joybutton.pressed)
+        if(shoot && !joybutton.pressed)
         {
-            jump = false;
+            shoot = false;
         }
         if(joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
@@ -83,7 +89,22 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(bulletPrefab, shootingPosition.position, shootingPosition.rotation);
             audioSource.Play();
         }
-        
-
+    }
+    public void CheckForVictory()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if(enemies.Length == 0)
+        {
+            victory.enabled = true;
+            int enemies = int.Parse(Enemy.text);
+            int time = int.Parse(timer.text);
+            int score = enemies + time;
+            PlayerPrefs.SetInt("score", score);
+            Invoke("LoadVictory", 2f);
+        }
+    }
+    public void LoadVictory()
+    {
+        SceneManager.LoadScene(4);
     }
 }

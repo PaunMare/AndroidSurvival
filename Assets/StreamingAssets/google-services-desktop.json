@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "663365604620",
+    "firebase_url": "https://unity-mr-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "unity-mr",
+    "storage_bucket": "unity-mr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663365604620:android:45d76d606767d6ca8da529",
+        "android_client_info": {
+          "package_name": "com.ThePack.Covidassault"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663365604620-2h1ancvmrmrq37lkdcfeeb86n36lhm5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFgxkTtIL15i8ZHgwXPgORBxtbZfvWSK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663365604620-2h1ancvmrmrq37lkdcfeeb86n36lhm5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

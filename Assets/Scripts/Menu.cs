@@ -14,18 +14,23 @@ public class Menu : MonoBehaviour
     int bestScore;
     public AudioMixer audioMixer;
     public Toggle sound;
+    public GameObject panelLogIn;
+    public GameObject panelSignIn;
     void Awake()
     {
-        nickname = PlayerPrefs.GetString("name");
-        score = PlayerPrefs.GetInt("score");
-        text.text = "Name: " + nickname + "\nscore: " + score.ToString();
-        bestNick = PlayerPrefs.GetString("bestNick");
-        bestScore = PlayerPrefs.GetInt("bestScore");
-        bestText.text = "Name: " + bestNick + "\nscore: " + bestScore.ToString();
+        Screen.orientation = ScreenOrientation.Portrait;
+        panelLogIn.active = false;
+        panelSignIn.active = false;
     }
-    public void StartTheGame()
+    public void LogIn()
     {
-        SceneManager.LoadScene(2);
+        panelLogIn.active = true;
+        panelSignIn.active = false;
+    }
+    public void SignIn()
+    {
+        panelLogIn.active = false;
+        panelSignIn.active = true;
     }
     public void Credits()
     {

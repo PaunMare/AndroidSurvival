@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Credits : MonoBehaviour
 {
-    
+    private void Awake()
+    {
+        Screen.orientation = ScreenOrientation.Portrait;
+    }
     void Start()
     {
         Invoke("MainMenu", 18f);

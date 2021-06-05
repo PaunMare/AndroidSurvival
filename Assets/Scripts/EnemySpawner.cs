@@ -15,27 +15,25 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if(currentTime > nextSpawn)
+        if(currentTime > nextSpawn && currentTime <= 180f)
         {
             SpawnEnemy();
             nextSpawn += spawnTime;
         }
         time += 1 * Time.deltaTime;
         timer.text = currentTime.ToString("0");
-        InvokeRepeating("PowerUp", 10f, 10f);
+        InvokeRepeating("PowerUp", 0f, 40f);
     }
     public void SpawnEnemy()
     {
         int i = Random.Range(0, spawningPosition.Count);
-        GameObject enemy =  Instantiate(enemyPrefab, spawningPosition[i].gameObject.transform);
-        
-       
+        GameObject enemy =  Instantiate(enemyPrefab, spawningPosition[i].gameObject.transform);  
     }
     public void PowerUp()
     {
         if(spawnTime > 1)
         {
-            spawnTime -= 0.5f;
+            spawnTime -= 1f;
         }
     }
 }

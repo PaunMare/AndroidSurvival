@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerInput.unity
     guid: 22da6f02aba2f4d498b4cba9f1fb8d0e
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 54799bec42cd4ae479a1014e072667f4
+  - enabled: 1
+    path: Assets/Scenes/LogIn.unity
+    guid: 648dd09d21de48d4e85ee0af552f59b0
+  - enabled: 1
+    path: Assets/Scenes/SignIn.unity
+    guid: 7090243ef387000408f666a031bac640
   m_configObjects: {}

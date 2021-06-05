@@ -582,13 +582,7 @@ MonoBehaviour:
     - Colors [NCS Release]
 
 
-    If You think that I should adjust some gameplay
-    mechanics, feel free to mail me at paunovic.marko1998@gmai.com
-
-
-
-    P.S. Haters
-    be damned, game design can be made using paint :P '
+'
 --- !u!222 &1525969337
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -656,6 +650,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1930683355
 Canvas:
   m_ObjectHideFlags: 0
